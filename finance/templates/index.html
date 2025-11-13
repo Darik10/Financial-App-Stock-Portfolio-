@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ Home
+ {% endblock %}
+
+ {%  block main %}
+ <div> <p> Bougt! </p></div>
+<br>
+
+ <table class="table">
+    <tr>
+      <th>Symbol</th>
+      <th>Shares</th>
+      <th>Price</th>
+      <th>Total Value</th>
+    </tr>
+    {% for i in holding %}
+    <tr> <td>  {{i["Symbol"] }} </td> <td> {{i["Shares"]}} </td> <td> {{i["Price"] | usd}} </td> <td> {{i["Total_Value"] | usd}} </td> </tr>
+    {% endfor %}
+
+ </table>
+
+ <br>
+
+ <div>
+   <p> Cash: {{ cash | usd }} </p>
+   <p> Total: {{ total | usd}} </p>
+ </div>
+
+ {% endblock %}
+
+
