@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+Stock quote results
+
+{% endblock %}
+
+{% block main %}
+
+<p> Company: {{data.name}} </p>
+<p> Price: {{data.price | usd}} </p>
+<p> Symbol: {{data.symbol}} </p>
+
+{% endblock %}
+
+

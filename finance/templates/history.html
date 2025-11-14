@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History of Shares!
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <tr>
+        <th> Timestamp </th>
+        <th> Transaction Type </th>
+        <th> Symbol</th>
+        <th> Shares </th>
+        <th> Price </th>
+    </tr>
+    {% for n in data %}
+    <tr>
+         <td> {{ n["timestamp"]}} </td>
+         <td> {{ n["transaction_type"]}} </td>
+         <td> {{ n["symbol"]}} </td>
+         <td> {{ n["shares"]}} </td>
+         <td> {{ n["price"] | usd}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
